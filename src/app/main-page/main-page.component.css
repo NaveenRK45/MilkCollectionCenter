@@ -1,0 +1,42 @@
+.img1{
+   width: 100%; 
+   height: 100%;
+   background-image: url('/assets/images/milkimage.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+}
+img{
+    width: 12%;
+    height: 11%;
+    border-radius: 70px;
+    margin-top: 20%;
+    cursor: pointer;
+}
+.logo{
+    text-align: center;
+}
+h1{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.scroller{
+    color:ghostwhite;
+    font-size: 15px;
+    margin-top: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.material-symbols-outlined {
+    font-size:15px;
+    color: red;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 40
+}

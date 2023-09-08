@@ -1,0 +1,42 @@
+.Register-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.Register-form{
+    padding: 4%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    background-color: #b6b1d2;
+}
+.Register-form h3{
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+.gender{
+    padding-left: 15px;
+}
+.rightside{
+    background-color: #b6b1d2;
+    background-image: url('/assets/images/sitelogo.png');
+    background-repeat: no-repeat;
+}
+h4{
+    color: #333;
+    font-weight: 500;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.Register-form .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+.submitbtn{
+    text-align: center;
+}

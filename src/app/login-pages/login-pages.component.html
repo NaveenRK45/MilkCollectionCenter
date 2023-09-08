@@ -1,0 +1,78 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <h3>Admin-Login </h3>
+            <form [formGroup]="AdminLoginForm" (ngSubmit)="adminlogin()">
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="abc@gmail.com *"
+                           formControlName="Admin"
+                           [class.is-invalid]="AdminLoginForm.controls.Admin.invalid && AdminLoginForm.controls.Admin.touched"/>
+                    <div class="text-danger" *ngIf="AdminLoginForm.controls.Admin.touched  && AdminLoginForm.controls.Admin.errors?.required">
+                        Name is Required
+                    </div>
+                    <div class="text-danger" *ngIf="AdminLoginForm.controls.Admin.errors?.Admin">
+                        Enter a Valid Name
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password"
+                     class="form-control"
+                     placeholder="Password *"
+                     formControlName="Password"
+                     [class.is-invalid]="AdminLoginForm.controls.Password.invalid && AdminLoginForm.controls.Password.touched" />
+                     <div class="text-danger" *ngIf="AdminLoginForm.controls.Password.touched && AdminLoginForm.controls.Password.errors?.required">
+                        Password is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <input type="submit" class="btnSubmit" value="Login" /> -->
+                    <button type="submit" class="btnSubmit" [disabled]="this.AdminLoginForm.invalid">Login</button>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">Forget Password?</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 login-form-2">
+            <h3>User-Login</h3>
+            <form [formGroup]="UserLoginForm" (ngSubmit)="userlogin()">
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control" 
+                           placeholder="xyz@gmail.com *"
+                           formControlName="UserName" 
+                           [class.is-invalid]="this.UserLoginForm.controls.UserName.touched && this.UserLoginForm.controls.UserName.invalid"/>
+                           <div class="text-danger"
+                           *ngIf="UserLoginForm.controls.UserName.touched  && UserLoginForm.controls.UserName.errors?.required">
+                            UserName is required
+                           </div>
+                           <div class="text-danger"*ngIf="UserLoginForm.controls.UserName.errors?.UserName">
+                             Enter a valid UserName
+                           </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="password"
+                     class="form-control" 
+                     placeholder="Password *"
+                     formControlName="password"
+                     [class.is-invalid]="UserLoginForm.controls.password.invalid && UserLoginForm.controls.password.touched" />
+                     <div class="text-danger" *ngIf="UserLoginForm.controls.password.touched && UserLoginForm.controls.password.errors?.required">
+                        Password is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <input type="submit" class="btnSubmit" value="Login" /> -->
+                    <button type="submit" class="btnSubmit" [disabled]="this.UserLoginForm.invalid">Login</button>
+                </div>
+                <div class="form-group">
+
+                    <a href="#" class="ForgetPwd" value="Login">Forget Password?</a><br><br>
+                    Don't have an account &nbsp;<a routerLink="/user-Register" class="Register">Register Here?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

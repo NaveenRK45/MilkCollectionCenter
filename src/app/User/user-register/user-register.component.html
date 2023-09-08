@@ -1,0 +1,250 @@
+<div class="container Register-container">
+    <div class="row">
+        <div class="col-md-6 Register-form">
+            <h3>Register Here</h3>
+            <form [formGroup]="RegisterForm" (ngSubmit)="Register()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="firstname"
+                                formControlName="firstname"
+                                [class.is-invalid]="RegisterForm.controls.firstname.invalid && RegisterForm.controls.firstname.touched"/>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.firstname.touched  && RegisterForm.controls.firstname.errors?.required">
+                                First Name is Required
+                            </div>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.firstname.errors?.firstname">
+                                Enter a Valid First Name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="lastname"
+                                formControlName="lastname"
+                                [class.is-invalid]="RegisterForm.controls.lastname.invalid && RegisterForm.controls.lastname.touched"/>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.lastname.touched  && RegisterForm.controls.lastname.errors?.required">
+                                Last Name is Required
+                            </div>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.lastname.errors?.lastname">
+                                Enter a Valid Last Name
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="username"
+                                formControlName="username"
+                                [class.is-invalid]="RegisterForm.controls.username.invalid && RegisterForm.controls.username.touched"/>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.username.touched  && RegisterForm.controls.username.errors?.required">
+                                UserName is Required
+                            </div>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.username.errors?.username">
+                                Enter a Valid UserName
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="password"
+                                class="form-control"
+                                placeholder="******"
+                                formControlName="password"
+                                [class.is-invalid]="RegisterForm.controls.password.invalid && RegisterForm.controls.password.touched"/>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.password.touched  && RegisterForm.controls.password.errors?.required">
+                                Password is Required
+                            </div>
+                            <div class="text-danger" *ngIf="RegisterForm.controls.password.errors?.password">
+                                Enter a Valid Password
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Date Of Birth</label>
+                        <input type="date" class="form-control " formControlName="dob">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row gender">
+                            <label class="form-label">Gender</label>
+                            <div class="col-md-4">
+                                <input class="form-check-input" type="radio" name="gender"
+                                    id="femaleGender" value="female"
+                                    formControlName="gender">&nbsp;
+                                <label class="form-check-label" for="femaleGender">Female</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-check-input" type="radio" name="gender"
+                                    id="maleGender" value="male" formControlName="gender">&nbsp;
+                                <label class="form-check-label" for="maleGender">Male</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-check-input" type="radio" name="gender"
+                                    id="otherGender" value="others" formControlName="gender">&nbsp;
+                                <label class="form-check-label" for="otherGender">Other</label>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="form-label">Date Of Joining</label>
+                        <input type="date" class="form-control " formControlName="doj">  
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <h4>Bank Details :</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="number"
+                                class="form-control"
+                                placeholder="A/C no"
+                                formControlName="accountno"
+                                [class.is-invalid]="RegisterForm.controls.accountno.invalid && RegisterForm.controls.accountno.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.accountno.touched  && RegisterForm.controls.accountno.errors?.required">
+                                    Account no is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.accountno.errors?.accountno">
+                                    Enter a Valid Account no
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="IFSC no"
+                                formControlName="Ifsccode"
+                                [class.is-invalid]="RegisterForm.controls.Ifsccode.invalid && RegisterForm.controls.Ifsccode.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.Ifsccode.touched  && RegisterForm.controls.Ifsccode.errors?.required">
+                                    IFSC code is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.Ifsccode.errors?.Ifsccode">
+                                    Enter a Valid IFSC code
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="BankName"
+                                formControlName="bankname"
+                                [class.is-invalid]="RegisterForm.controls.bankname.invalid && RegisterForm.controls.bankname.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.bankname.touched  && RegisterForm.controls.bankname.errors?.required">
+                                    Bank Name is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.bankname.errors?.bankname">
+                                    Enter a Valid Bank Name
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="Branch Add"
+                                formControlName="branchadd"
+                                [class.is-invalid]="RegisterForm.controls.branchadd.invalid && RegisterForm.controls.branchadd.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.branchadd.touched  && RegisterForm.controls.branchadd.errors?.required">
+                                    Branch Address is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.branchadd.errors?.branchadd">
+                                    Enter a Valid Branch Address
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <h4>General Details :</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="Vilage/Town"
+                                formControlName="village"
+                                [class.is-invalid]="RegisterForm.controls.village.invalid && RegisterForm.controls.village.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.village.touched  && RegisterForm.controls.village.errors?.required">
+                                    Village is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.village.errors?.village">
+                                    Enter a Valid Village
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="Mandal"
+                                formControlName="mandal"
+                                [class.is-invalid]="RegisterForm.controls.mandal.invalid && RegisterForm.controls.mandal.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.mandal.touched  && RegisterForm.controls.mandal.errors?.required">
+                                    Mandal Name is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.mandal.errors?.mandal">
+                                    Enter a Valid Mandal Name
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                placeholder="City"
+                                formControlName="city"
+                                [class.is-invalid]="RegisterForm.controls.city.invalid && RegisterForm.controls.city.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.city.touched  && RegisterForm.controls.city.errors?.required">
+                                    City Name is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.city.errors?.city">
+                                    Enter a Valid City Name
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="number"
+                                class="form-control"
+                                placeholder="Pincode"
+                                formControlName="pincode"
+                                [class.is-invalid]="RegisterForm.controls.pincode.invalid && RegisterForm.controls.pincode.touched"/>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.pincode.touched  && RegisterForm.controls.pincode.errors?.required">
+                                    Pincode is Required
+                                </div>
+                                <div class="text-danger" *ngIf="RegisterForm.controls.pincode.errors?.pincode">
+                                    Enter a Valid Pincode
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row submitbtn mt-4">
+                    <div class="form-group">
+                        <button type="submit" class="btnSubmit" [disabled]="this.RegisterForm.invalid">Sign Up</button>
+                    </div>
+                    <div class="form-group">
+                    Already have an account &nbsp;<a routerLink="/login-Page" class="login">Login Now</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 rightside">
+        </div>
+    </div>
+</div>
